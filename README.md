@@ -4,6 +4,8 @@ Browser-based threat detection platform. Paste firewall logs and get instant ana
 
 Built to demonstrate applied cybersecurity knowledge: detection logic, MITRE ATT&CK mapping, network forensics, and evidence chain handling.
 
+![Demo — paste logs, instant detection](samples/vt-demo-fullres.gif)
+
 ---
 
 ## Running Locally
@@ -65,7 +67,7 @@ Parsers auto-detect format on paste. No configuration needed.
 - **Pure vanilla JS ESM** -- no framework and no build step. Every component is a JS class exporting an ES module; DuckDB WASM is the only npm dependency, with browser assets vendored under `vendor/duckdb`.
 - **Local-first analysis** -- default parsing, detection, SQL, evidence generation, and presentation run in the browser. No API keys or cloud services are required. IndexedDB stores workspaces, datasets, queries, snapshots, and transcripts.
 - **DuckDB WASM** -- in-browser SQL engine for ad-hoc log hunting. Query your parsed data with full SQL against in-memory `flows`, `cloudtrail`, and `datasets` tables.
-- **73 unit tests** across 23 test files -- parsers, detectors, MITRE mappings, agent skills, evidence generation, self-tests.
+- **83 unit tests** across 24 test files -- parsers, detectors, MITRE mappings, agent skills, evidence generation, self-tests.
 - **Presentation deck** -- 6-slide boardroom-ready output (Overview, Snapshot, Triage, Diff, Hypothesis, Remediation) generated deterministically from analysis state.
 
 ---
