@@ -1,0 +1,306 @@
+/* ==========================================================================
+   VulcansTrace Modal CSS
+   Overlays, modals, and theater mode presentation
+   ========================================================================== */
+
+/* --- MODALS --- */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 300;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+}
+
+.overlay.active {
+    display: flex;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.modal-box {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    width: 550px;
+    max-width: 90%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    transform: scale(0.95);
+    animation: popIn 0.2s ease-out forwards;
+}
+
+.modal-head {
+    background: var(--bg-input);
+    padding: 16px;
+    border-bottom: 1px solid var(--border);
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.modal-body {
+    padding: 20px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.modal-foot {
+    padding: 16px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    background: var(--bg-input);
+}
+
+/* --- THEATER MODE --- */
+.theater-overlay {
+    z-index: 420;
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(10px);
+}
+
+.theater-box {
+    width: 1040px;
+    max-width: 94vw;
+    height: 84vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, rgba(17, 24, 39, 0.96), rgba(2, 6, 23, 0.96));
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 35px 80px -25px rgba(0, 0, 0, 0.7);
+}
+
+.theater-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 16px 18px;
+    background: rgba(15, 23, 42, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.theater-title {
+    font-weight: 800;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+}
+
+.theater-subtitle {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+.theater-head-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.theater-body {
+    padding: 18px;
+    overflow: auto;
+    flex: 1;
+}
+
+.theater-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    background: rgba(15, 23, 42, 0.9);
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.theater-nav {
+    display: flex;
+    gap: 10px;
+}
+
+.theater-slide h2 {
+    margin: 8px 0 8px 0;
+    font-size: 1.55rem;
+    letter-spacing: -0.02em;
+}
+
+.theater-kicker {
+    color: var(--accent-cyan);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.theater-muted {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+}
+
+.theater-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.theater-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 14px;
+}
+
+.theater-card-title {
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.theater-big {
+    font-size: 1.05rem;
+    line-height: 1.4;
+}
+
+.theater-list {
+    margin: 10px 0 0 18px;
+    padding: 0;
+}
+
+.theater-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.theater-metric {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.theater-metric .label {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.theater-metric .value {
+    display: block;
+    font-weight: 800;
+    font-size: 1.15rem;
+    margin-top: 4px;
+}
+
+.theater-warning {
+    border-color: rgba(251, 191, 36, 0.25);
+    background: rgba(251, 191, 36, 0.08);
+}
+
+.theater-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+@media (max-width: 840px) {
+    .theater-two-col {
+        grid-template-columns: 1fr;
+    }
+}
+
+.theater-pre {
+    margin: 8px 0 0 0;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    background: rgba(2, 6, 23, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+}
+
+/* Intro slide — agenda list */
+.theater-agenda {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.theater-agenda-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 0;
+}
+
+.theater-agenda-num {
+    font-weight: 800;
+    font-size: 0.75rem;
+    color: var(--accent-cyan);
+    min-width: 22px;
+    opacity: 0.7;
+}
+
+.theater-agenda-title {
+    font-weight: 700;
+    font-size: 0.92rem;
+    min-width: 95px;
+}
+
+.theater-agenda-desc {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Severity badges on intro slide */
+.sev-badge {
+    font-size: 0.88rem !important;
+    letter-spacing: 0.06em;
+    border-radius: 6px;
+    padding: 2px 8px;
+}
+
+.sev-critical {
+    color: #ef4444 !important;
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.sev-elevated {
+    color: #f59e0b !important;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.sev-normal {
+    color: #22c55e !important;
+    background: rgba(34, 197, 94, 0.10);
+    border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+/* Keyboard hint keys */
+.theater-slide kbd {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-family: inherit;
+    font-size: 0.82rem;
+}

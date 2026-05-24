@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VulcansTrace</title>
+    
+    <script>
+        if (location.protocol === 'file:') {
+            document.addEventListener('DOMContentLoaded', function() {
+                document.body.innerHTML = '<div style="padding:40px;font-family:sans-serif;text-align:center;"><h1>VulcansTrace requires a dev server</h1><p>Open with: <code>npm run dev</code></p></div>';
+            });
+        }
+    </script>
+    <!-- Stylesheets (order matters: core must load first for CSS variables) -->
+    <link rel="stylesheet" href="styles/core.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/modals.css">
+    <link rel="stylesheet" href="styles/demo.css">
+</head>
+
+<body>
+    <!-- Load application as ESM module -->
+    <script type="module" src="components/main.js"></script>
+</body>
+
+</html>
