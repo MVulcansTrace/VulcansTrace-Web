@@ -1,5 +1,12 @@
 # VulcansTrace-Web
 
+[![Deploy GitHub Pages](https://github.com/MVulcansTrace/VulcansTrace-Web/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/MVulcansTrace/VulcansTrace-Web/actions/workflows/deploy-pages.yml)
+[![Live Demo](https://img.shields.io/badge/demo-GitHub%20Pages-2ea44f)](https://mvulcanstrace.github.io/VulcansTrace-Web/)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
+[![Node](https://img.shields.io/badge/node-%3E%3D20-339933)](package.json)
+[![Vanilla JS](https://img.shields.io/badge/frontend-vanilla%20JS-f7df1e)](components/main.js)
+[![DuckDB WASM](https://img.shields.io/badge/sql-DuckDB%20WASM-fff000)](vendor/duckdb/duckdb-esm.js)
+
 Browser-based threat detection platform. Paste firewall logs and get instant analysis -- 10 detection badges, DuckDB SQL engine, automated evidence packaging, and a boardroom-ready presentation deck. No framework, no build step, and local-first analysis in your browser.
 
 Built to demonstrate applied cybersecurity knowledge: detection logic, MITRE ATT&CK mapping, network forensics, and evidence chain handling.
