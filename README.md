@@ -22,6 +22,16 @@ Then open `http://localhost:7071` in your browser. Requires [Node.js](https://no
 
 You'll be prompted to create a workspace (investigation case) on first launch. Name it anything, then paste logs or run the Guided Demo to see detection in action.
 
+## GitHub Pages
+
+The public site is deployed with GitHub Actions to:
+
+```text
+https://mvulcanstrace.github.io/VulcansTrace-Web/
+```
+
+Every push to `main` publishes the checked-in browser assets from `index.html`, `assets`, `components`, `samples`, `styles`, and `vendor`. There is no build step.
+
 ---
 
 ## Detection Capabilities
