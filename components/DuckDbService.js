@@ -120,7 +120,9 @@ export class DuckDbService {
     }
 
     async ensureTablesFresh(force = false) {
-        await this.ensureReady();
+        if (!this.isReady()) {
+            await this.ensureReady();
+        }
 
         if (!force && this.loadedVersion === this.dataVersion) return;
         if (this.refreshPromise) return await this.refreshPromise;
